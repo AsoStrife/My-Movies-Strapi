@@ -1,5 +1,5 @@
 {
-  "name": "strapi-services",
+  "name": "my-movies-strapi",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -9,18 +9,18 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
+  "devDependencies": {},
   "dependencies": {
-    "@strapi/plugin-documentation": "^4.1.2",
-    "@strapi/plugin-i18n": "4.1.2",
-    "@strapi/plugin-users-permissions": "4.1.2",
     "@strapi/strapi": "4.1.7",
+    "@strapi/plugin-users-permissions": "4.1.7",
+    "@strapi/plugin-i18n": "4.1.7",
     "mysql": "2.18.1"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "6568eccb-55f3-426a-8d1a-223067454035"
+    "uuid": "01eeed87-513f-4c00-bce4-986368301cfd"
   },
   "engines": {
     "node": ">=12.x.x <=16.x.x",

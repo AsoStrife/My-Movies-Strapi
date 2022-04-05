@@ -114,3 +114,5 @@ build
 .strapi-updater.json
 sql/
 .env_remote
+
+package-lock.json

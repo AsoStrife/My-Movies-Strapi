@@ -9,6 +9,12 @@ const { countBy } = require('lodash');
 const { createCoreController } = require('@strapi/strapi').factories;
 
 module.exports = createCoreController('api::film.film', ({strapi}) => ({
+   
+    
+    async findOne(ctx) {
+        return strapi.db.query('api::film.film').findOne({where: { tmdb_id: ctx.params?.id }})
+    },
+    
     /**
      * If the film (tbmd_id) already exist the database use an update
      * otherwise use a create
@@ -16,8 +22,11 @@ module.exports = createCoreController('api::film.film', ({strapi}) => ({
      * @returns meta-data
      */
     async create(ctx) {
-        let tmdb_id = ctx.request.body.data.tmdb_id
-        let film = await strapi.db.query('api::film.film').findOne({where: { tmdb_id: tmdb_id }});
+        let film = await strapi.db.query('api::film.film').findOne({
+            where: { 
+                tmdb_id: ctx.request.body.data.tmdb_id 
+            }
+        })
 
         if(film){
             ctx.params = {"id": film.id}
